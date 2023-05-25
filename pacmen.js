@@ -5,7 +5,6 @@ const pacArray = [
 ];
 let direction = 0;
 const pacMen = []; // This array holds all the pacmen    
-let openMouth = true;
 
 // This function returns an object with random values
 function setToRandom(scale) {
@@ -25,20 +24,21 @@ function makePac() {
   let game = document.getElementById('game');
   let newimg = document.createElement('img');
   newimg.style.position = 'absolute';
-  newimg.src = './images/PacMan1.png';
+  newimg.src = pacArray[0][0];
   newimg.width = 100;
+  let openMouth = true;
 
-  // TODO: set position here
+  // set position here
   newimg.style.left = position.x;
   newimg.style.top = position.y;
-  // TODO add new Child image to game
+  // add new Child image to game
   game.appendChild(newimg);
 
   // return details in an object
   return {
     position,
     velocity,
-    newimg,
+    newimg
   };
 }
 
@@ -52,8 +52,8 @@ function update() {
     item.newimg.style.left = item.position.x;
     item.newimg.style.top = item.position.y;
 
-    let changeImage = openMouth ? 0 : 1;
-    openMouth = ! openMouth
+    let changeImage = item.openMouth ? 1 : 0;
+    item.openMouth = ! item.openMouth
     direction = (item.velocity.x > 0) ? 0 : 1;
     item.newimg.src = pacArray[direction][changeImage];
   });
@@ -61,7 +61,7 @@ function update() {
 }
 
 function checkCollisions(item) {
-  // TODO: detect collision with all walls and make pacman bounce
+  //detect collision with all walls and make pacman bounce
   if(item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0) {
       item.velocity.x = -item.velocity.x;
