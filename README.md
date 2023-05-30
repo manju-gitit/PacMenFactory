@@ -1,7 +1,7 @@
 # PacMen Factory
  <p>You can choose to add as many pacmen as you like and each pacman will start chomping across the screen 
   and reverses direction when hit the edges 
-  <img src="./Images/PacMan1.png"> 
+  <img src="./images/PacMan1.png"> 
 </p>
 <h2>How to Run:</h2>
 <ul>
