@@ -3,7 +3,7 @@
   and reverses direction when hit the edges 
 </p>
 <p>
- <img src="./images/PacMan1.png" width="50" height="50"> 
+ <img src="./images/PacMan1.png" width="150" height="150"> 
  </p>
 <h2>How to Run:</h2>
 <ul>
